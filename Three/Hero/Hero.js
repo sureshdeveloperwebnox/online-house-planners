@@ -15,6 +15,13 @@ import TitleText from '../Title/TitleText';
 import TiteHead from '../Title/TitleHead';
 import { TitleCard } from '../Title/TitleCard';
 import { NavBarComponents } from '../NavBar/NavBarComponent';
+import VoiceScroll from './VoiceCommands/VoiceScroll';
+import CircularGallery from '../CircularGallery/CircularGallery';
+import Carousel from '../Carousel/Carousel';
+import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
+import { CompareComponent } from '../CompareComponent/CompareComponent';
+import { DraggableCardComponent } from '../DraggableCard/DraggableCardComponent';
+import { CardComponent } from '../CardHeader/CardComponent';
 
 export const SmoothScrollHero = () => {
   // Initialize Lenis smooth scroll
@@ -40,9 +47,23 @@ export const SmoothScrollHero = () => {
       <Nav />
       <TitleCard 
       />
-
+      
+ {/* <VoiceScroll /> */}
       <Hero />
-      <Schedule />
+<Carousel/>
+  <InfiniteScroll
+    isTilted={true}
+    tiltDirection='left'
+    autoplay={true}
+    autoplaySpeed={10}
+    autoplayDirection="down"
+    pauseOnHover={true}
+  />
+  <CompareComponent />
+  <DraggableCardComponent />
+  
+  <CardComponent />
+      {/* <Schedule /> */}
     </div>
   );
 };
@@ -89,7 +110,7 @@ const Hero = () => {
     >
       <CenterImage />
       <ParallaxImages />
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" /> */}
     </div>
   );
 };
