@@ -171,7 +171,7 @@ export const Compare = ({
           {firstImage ? (
             <motion.div
               className={cn(
-                "absolute inset-0 z-20 rounded-2xl shrink-0 w-full h-full select-none overflow-hidden",
+                "absolute inset-0 z-10 rounded-2xl shrink-0 w-full h-full select-none overflow-hidden",
                 firstImageClassName
               )}
               style={{
@@ -180,7 +180,7 @@ export const Compare = ({
               transition={{ duration: 0 }}>
               <img
                 alt="first image"
-                src="/images/house/houseimage-6.jpg"
+                src="/images/house/PlanHouse1.jpg"
                 className={cn(
                   "absolute inset-0  z-20 rounded-2xl shrink-0 w-full h-full select-none",
                   firstImageClassName
@@ -198,7 +198,7 @@ export const Compare = ({
               secondImageClassname
             )}
             alt="second image"
-            src="/images/house/houseimage-4.jpg"
+            src="/images/house/RealHouse1.jpg"
             draggable={false} />
         ) : null}
       </AnimatePresence>

@@ -22,6 +22,16 @@ import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
 import { CompareComponent } from '../CompareComponent/CompareComponent';
 import { DraggableCardComponent } from '../DraggableCard/DraggableCardComponent';
 import { CardComponent } from '../CardHeader/CardComponent';
+import WelcomeText from '../WelcomeText/WelcomeText';
+import FocusText from '../TrueFocusText/FocusText';
+import FallingText from '../FallingText/FallingText';
+import ScrollReveal from '../ScrollReveal/ScrollReveal';
+import AnimatedText from '../OurServiceText';
+import TrailingImage from '../TrailingImages/TraillingImage';
+import ConsultationCard from '../ConsultationCard/ConsultationCard';
+import SpotlightCard from './SpotlightCard/SpotlightCard';
+import Footer from '../Footer/Footer';
+import { Canvas } from '@react-three/fiber';
 
 export const SmoothScrollHero = () => {
   // Initialize Lenis smooth scroll
@@ -42,6 +52,10 @@ export const SmoothScrollHero = () => {
     return () => lenis.destroy();
   }, []);
 
+  const textReveal = `At Online House Planners, we bring your dream space to life with the power of a fully digital experience. Our team of licensed architects, creative interior designers, skilled engineers, and expert planners work together seamlessly to deliver stunning designs.
+Let’s design a home that doesn’t just look amazing but feels right—with every detail thoughtfully aligned to your lifestyle, your taste, and your values.
+  `
+
   return (
     <div className="bg-white-950">
       <Nav />
@@ -50,20 +64,65 @@ export const SmoothScrollHero = () => {
       
  {/* <VoiceScroll /> */}
       <Hero />
-<Carousel/>
-  <InfiniteScroll
+{/* <Carousel/> */}
+  {/* <InfiniteScroll
     isTilted={true}
     tiltDirection='left'
     autoplay={true}
     autoplaySpeed={10}
     autoplayDirection="down"
     pauseOnHover={true}
-  />
+  /> */}
+
+    <CardComponent />
+
+        {/* <WelcomeText
+        text= "Build Without Limits. Plan Without Stress.!"
+        animateBy="letters"
+        direction="top"
+        className="text-5xl font-bold"
+        delay={50}
+        once={true}
+         /> */}
   <CompareComponent />
+  <FocusText />
+
+{/* <div style={{ height: "2000px", paddingTop: "1000px" }}> */}
+
+    {/* </div> */}
+    {/* <Canvas> */}
+
+<AnimatedText />
+{/* </Canvas> */}
+
   <DraggableCardComponent />
-  
-  <CardComponent />
+
+  {/* <div className=''>How We Works</div> */}
+
+      {/* <FallingText
+        text="Online House Plan – Online interior design are designed at Online House Planners with collective of online architects, online interior designers, engineers, and online house planners working together to build the best online house plan, online interior design, online 3d elevation, and much more. We provide the best house design with a licensed online architect in India. We Believe…Every house design evolves organically, encompassing all – from the shell to minute details with vastu house plans. We, therefore design only as a whole as all these should necessarily be seamlessly integrated to create a wholesome edifice that is truly functional & Aesthetically pleasing with a perfect blend of Creativity + technicality.!"
+        highlightWords={["fall"]}
+        trigger="scroll"
+        fontSize="2rem"
+        backgroundColor="white"
+        gravity={0.5}
+      /> */}
+      {/* </div> */}
+
+      <div>
+        
+      </div>
+  <ScrollReveal
+        text= {textReveal}
+        className="bg-gray-100 p-10"
+      />
       {/* <Schedule /> */}
+
+      <TrailingImage />
+      {/* <ConsultationCard /> */}
+
+      {/* <SpotlightCard/> */}
+      <Footer />
     </div>
   );
 };

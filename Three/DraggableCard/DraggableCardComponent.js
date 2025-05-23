@@ -9,39 +9,39 @@ export function DraggableCardComponent() {
     {
       title: "Living Room",
       image:
-        "/images/house/houseimage-6.jpg",
+        "/images/house/livingroom.jpg",
       className: "absolute top-10 left-[20%] rotate-[-5deg]",
     },
     {
-      title: "Room 1",
-      image:"/images/house/houseimage-6.jpg",
+      title: "Office Room Interior",
+      image:"/images/house/officeroom.jpg",
       className: "absolute top-40 left-[25%] rotate-[-7deg]",
     },
     {
-      title: "Room 2",
-      image:"/images/house/houseimage-6.jpg",
+      title: "Bedroom Interior",
+      image:"/images/house/bedroominterior.avif",
       className: "absolute top-5 left-[40%] rotate-[8deg]",
     },
     {
-      title: "Room 2",
-      image:"/images/house/houseimage-6.jpg",
+      title: "Kitchen Room Interior",
+      image:"/images/house/kitcheninterior.avif",
       className: "absolute top-32 left-[55%] rotate-[10deg]",
     },
     {
-      title: "Room 2",
-      image:"/images/house/houseimage-6.jpg",
+      title: "Bathroom Interior",
+      image:"/images/house/bathroominterior.jpg",
       className: "absolute top-20 right-[35%] rotate-[2deg]",
     },
-    {
-      title: "Kitchen",
-      image:"/images/house/houseimage-6.jpg",
-      className: "absolute top-24 left-[45%] rotate-[-7deg]",
-    },
-    {
-      title: "Bedroom",
-      image:"/images/house/houseimage-6.jpg",
-      className: "absolute top-8 left-[30%] rotate-[4deg]",
-    },
+    // {
+    //   title: "Kitchen",
+    //   image:"/images/house/houseimage-6.jpg",
+    //   className: "absolute top-24 left-[45%] rotate-[-7deg]",
+    // },
+    // {
+    //   title: "Bedroom",
+    //   image:"/images/house/houseimage-6.jpg",
+    //   className: "absolute top-8 left-[30%] rotate-[4deg]",
+    // },
   ];
   return (
     <DraggableCardContainer
