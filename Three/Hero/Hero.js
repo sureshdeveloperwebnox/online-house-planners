@@ -32,6 +32,8 @@ import ConsultationCard from '../ConsultationCard/ConsultationCard';
 import SpotlightCard from './SpotlightCard/SpotlightCard';
 import Footer from '../Footer/Footer';
 import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import { HouseAnimation } from '../HouseAnimation/HouseAnimation';
 
 export const SmoothScrollHero = () => {
   // Initialize Lenis smooth scroll
@@ -59,11 +61,12 @@ Let’s design a home that doesn’t just look amazing but feels right—with ev
   return (
     <div className="bg-white-950">
       <Nav />
-      <TitleCard 
-      />
-      
- {/* <VoiceScroll /> */}
+      <TitleCard />
+ <VoiceScroll />
       <Hero />
+            {/* <HouseAnimation /> */}
+
+      {/* <BathroomSection /> */}
 {/* <Carousel/> */}
   {/* <InfiniteScroll
     isTilted={true}
@@ -233,7 +236,7 @@ const ParallaxImages = () => {
         className="ml-auto w-1/3"
       />
       <ParallaxImg
-        src="/images/house/houseimage-5.jpg"
+        src="/images/house/whitehouse1.jpg"
         alt="Orbiting satellite"
         start={0}
         end={-500}
@@ -313,3 +316,52 @@ const ScheduleItem = ({ title, date, location }) => {
 };
 
 
+// Room Model
+const BathroomModel = () => {
+  const { scene } = useGLTF('/models/the_bathroom_free.glb');
+  const { scrollYProgress } = useScroll();
+  
+  // Transform scroll progress to rotation (0 to π/2) for a 90-degree rotation
+  const rotation = useTransform(scrollYProgress, [0, 1], [0, Math.PI / 2]);
+  
+  return (
+    <motion.group
+      animate={{ 
+        rotateX: rotation,
+      }}
+      transition={{ type: "spring", stiffness: 50 }}
+    >
+      <primitive 
+        object={scene} 
+        scale={2}
+        position={[0, -1.5, 0]}
+        rotation={[0, Math.PI / 4, 0]}
+      />
+    </motion.group>
+  );
+};
+
+
+const BathroomSection = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  return (
+    <div ref={sectionRef} className="h-screen w-full bg-zinc-950">
+      <Canvas camera={{ position: [3, 2, 3], fov: 50 }}>
+        <ambientLight intensity={0.7} />
+        <spotLight position={[5, 5, 5]} angle={0.3} penumbra={1} intensity={1} />
+        <spotLight position={[-5, 5, -5]} angle={0.3} penumbra={1} intensity={0.5} />
+        <BathroomModel />
+        <OrbitControls 
+          enableZoom={false}
+          enableRotate={false}
+          enablePan={false}
+        />
+      </Canvas>
+    </div>
+  );
+};

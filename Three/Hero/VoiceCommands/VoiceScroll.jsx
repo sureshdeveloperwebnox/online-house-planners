@@ -5,6 +5,8 @@ const VoiceScroll = () => {
   const recognitionRef = useRef(null);
 
   useEffect(() => {
+    console.log("Listenng");
+    
     if (typeof window === "undefined" || !("webkitSpeechRecognition" in window)) {
       alert("Web Speech API is not supported in this browser.");
       return;
@@ -21,7 +23,7 @@ const VoiceScroll = () => {
       console.log("Heard:", transcript);
 
       if (transcript.includes("scroll down")) {
-        window.scrollBy({ top: 200, behavior: "smooth" });
+        window.scrollBy({ top: 400, behavior: "smooth" });
       } else if (transcript.includes("scroll up")) {
         window.scrollBy({ top: -200, behavior: "smooth" });
       } else if (transcript.includes("scroll top")) {
